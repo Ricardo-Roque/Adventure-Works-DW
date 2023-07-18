@@ -5,9 +5,11 @@ sources:
     schema: sap_adw  
     tables:
       - name: product
+        description: Tabela de produtos comercializados pela Adventure Works.
         columns:
           - name: id_product
             tests:
               - unique
               - not_null
-              
+      - name: productlistpricehistory
+        description: Lista do historico de preços dos produtos.

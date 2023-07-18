@@ -13,3 +13,7 @@ sources:
               - not_null
       - name: productlistpricehistory
         description: Lista do historico de preços dos produtos.
+      - name: productsubcategory    
+        description: Subcategoria dos produtos.
+      - name: productcategory
+        description: Categoria dos produtos.

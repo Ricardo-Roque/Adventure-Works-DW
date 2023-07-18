@@ -17,3 +17,7 @@ sources:
         description: Subcategoria dos produtos.
       - name: productcategory
         description: Categoria dos produtos.
+      - name: workorder
+        description: Tabela de ordem de serviço.
+      - name: productcosthistory
+        description: Tabela preço de custo.

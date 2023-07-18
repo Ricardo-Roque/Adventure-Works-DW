@@ -20,12 +20,12 @@ with
             , cast(discontinueddate as int) as discontinued_date						
             , cast(rowguid as string) as row_guid						
             , cast(modifieddate as string) as modified_date
-            --, cast(finishedgoodsflag						
-            --, cast(color
-            --, cast(size					
-            --, cast(sizeunitmeasurecode						
-            --, cast(weightunitmeasurecode						
-            --, cast(weight	
+            --, finishedgoodsflag						
+            --, color
+            --, size					
+            --, sizeunitmeasurecode						
+            --, weightunitmeasurecode						
+            --, weight	
         from {{ source('sap', 'product') }}
     )
 

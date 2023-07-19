@@ -12,7 +12,8 @@ with
             category.product_category_id 
             , sub_category.product_subcategory_id	
             , category.name_product_category			
-            , sub_category.name_product_subcategory		 					
+            , sub_category.name_product_subcategory	
+            , category.row_guid	 					
         from sub_category
         left join category on sub_category.product_category_id = category.product_category_id	
     )

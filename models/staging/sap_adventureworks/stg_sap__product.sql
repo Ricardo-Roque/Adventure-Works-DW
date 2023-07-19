@@ -2,7 +2,7 @@ with
     fonte_product as (
         select
             cast(productid as int) as id_product						
-            , cast(name as string) as name_product_product						
+            , cast(name as string) as product_name						
             , cast(productnumber as string) as number_product						
             , cast(makeflag as string) as make_flag											
             , cast(safetystocklevel as int) as safety_stock_level						

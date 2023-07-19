@@ -18,7 +18,7 @@ with
     , join_tabelas as (
         select 
             product.id_product
-            , product.name_product_product
+            , product.product_name
             , product.number_product
             , product_cost.standard_cost
             , product_price.list_price
@@ -34,3 +34,4 @@ with
 
 select *
 from join_tabelas
+order by id_product

@@ -34,15 +34,14 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_adventureworks:
 
-
+    marts:
+      +materialized: table
+      +schema: marts  
+      
     staging:
       +materialized: view
       +schema: stg
 
-
-    marts:
-      +materialized: table
-      +schema: marts  
   
 
 seeds:

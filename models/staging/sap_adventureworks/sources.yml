@@ -7,7 +7,7 @@ sources:
       - name: product
         description: Tabela de produtos comercializados pela Adventure Works.
         columns:
-          - name: id_product
+          - name: productid
             tests:
               - unique
               - not_null

@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: int_credit_card
+    description: Int de cartão de credito dos clientes da Adventure Works.
+    columns:
+      - name: credit_card_id
+        description: Chave primária da int cartão de credito.
+        tests:
+          - unique
+          - not_null

@@ -19,6 +19,20 @@ sources:
             tests:
               - unique
               - not_null
+
+      - name: person
+        description: Lista de clientes da Adventure Works. 
+        columns:
+          - name: businessentityid
+            tests:
+              - unique 
+              - not_null
+      - name: personcreditcard
+        description: Lista de cartão de credito dos clientes.
+      - name: creditcard
+        description: Lista de detalhes de cartão de credito dos clientes. 
+            
+
       - name: productlistpricehistory
         description: Lista do historico de preços dos produtos.
       - name: productsubcategory    

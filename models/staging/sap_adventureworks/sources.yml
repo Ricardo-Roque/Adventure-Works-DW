@@ -4,6 +4,14 @@ sources:
   - name: sap 
     schema: sap_adw  
     tables:
+      - name: employee
+        description: Tabela de funcionarios da Aventure Works.
+        columns:
+          - name: businessentityid
+            tests:
+              - unique 
+              - not_null 
+
       - name: product
         description: Tabela de produtos comercializados pela Adventure Works.
         columns:

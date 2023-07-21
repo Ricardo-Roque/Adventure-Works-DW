@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: int_address_customer
+    description: Int de address dos clientes da Adventure Works.
+    columns:
+      - name: id_business
+        description: Chave primária da int address.
+        tests:
+          - unique
+          - not_null

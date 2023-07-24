@@ -12,14 +12,10 @@ sources:
             tests:
               - unique
               - not_null
-      - name: productlistpricehistory
-        description: Lista do historico de preços dos produtos.
       - name: productsubcategory    
         description: Subcategoria dos produtos.
       - name: productcategory
         description: Categoria dos produtos.
-      - name: productcosthistory
-        description: Tabela preço de custo.
 
 
       - name: person
@@ -37,6 +33,8 @@ sources:
         description: Lista de endereço dos clientes da Adventure Works.
       - name: stateprovince
         description: Lista de cidades dos clientes da Adventure Works.
+      - name: countryregion
+        description: Lista de paises dos clientes da Adventure Works.
 
       - name: salesorderheader
         description: Lista de vendas da Adventure Works. 

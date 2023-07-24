@@ -4,16 +4,7 @@ sources:
   - name: sap 
     schema: sap_adw  
     tables:
-      - name: employee
-        description: Tabela de funcionarios da Aventure Works.
-        columns:
-          - name: businessentityid
-            tests:
-              - unique 
-              - not_null 
-
-              
-
+      
       - name: product
         description: Tabela de produtos comercializados pela Adventure Works.
         columns:
@@ -27,8 +18,6 @@ sources:
         description: Subcategoria dos produtos.
       - name: productcategory
         description: Categoria dos produtos.
-      - name: workorder
-        description: Tabela de ordem de serviço.
       - name: productcosthistory
         description: Tabela preço de custo.
 
@@ -44,14 +33,23 @@ sources:
         description: Lista de cartão de credito dos clientes.
       - name: creditcard
         description: Lista de detalhes de cartão de credito dos clientes. 
-      - name: businessentityaddress
-        description: Lista de id do endereço de cada cliente. 
       - name: address
         description: Lista de endereço dos clientes da Adventure Works.
       - name: stateprovince
         description: Lista de cidades dos clientes da Adventure Works.
-      - name: businessentity
-        description: Lista de businees id dos clientes da Adventure Works.
 
+      - name: salesorderheader
+        description: Lista de vendas da Adventure Works. 
+        columns:
+          - name: businessentityid
+            tests:
+              - unique 
+              - not_null
+      - name: salesorderdetail
+        description: Lista de detalhes de vendas da Adventure Works.
+      - name: salesorderheadersalesreason
+        description: Lista de razões de vendas da Adventure Works.
+      - name: salesreason
+        description: Lista de tipo de razões de vendas da Adventure Works.
 
     

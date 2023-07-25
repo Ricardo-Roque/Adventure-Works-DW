@@ -3,7 +3,7 @@ models:
   - name: int_sales_orders
     description: Int de vendas da Adventure Works.
     columns:
-      - name: pk_sales	
+      - name: sales_oder_detail_id
         description: Chave primária da int de vendas.
         tests:
           - unique

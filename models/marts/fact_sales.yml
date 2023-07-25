@@ -3,7 +3,7 @@ models:
   - name: fact_sales
     description: Tabela fato de vendas.
     columns:
-      - name: sales_oder_detail_id	
+      - name: pk_sales	
         description: Chave primária da tabela fato.
         tests:
           - unique

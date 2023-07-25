@@ -42,11 +42,6 @@ with
         from sales_order_detail
         left join sales_order_header on sales_order_detail.sales_order_id = sales_order_header.sales_order_id
     )
-    , sales_key as (
-        select 
-            cast((sales_oder_detail_id || '-' || customer_id) as string) as pk_sales
-            , *
-        from join_sales_order
-    )
+    
 select *
 from join_sales_order

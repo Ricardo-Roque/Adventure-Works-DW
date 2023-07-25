@@ -39,7 +39,7 @@ sources:
       - name: salesorderheader
         description: Lista de vendas da Adventure Works. 
         columns:
-          - name: businessentityid
+          - name: salesorderid
             tests:
               - unique 
               - not_null

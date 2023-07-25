@@ -59,10 +59,17 @@ with
     , transformation as (
         select 
             * 
-            , (total_due / order_qty) as gross_total
-            , (sub_total / order_qty) as net_total
+            , (unit_price * order_qty) as gross_total
+            , (unit_price * order_qty) * (1 - unit_price_discount) as net_total
             , freight / (count(*) over(partition by sales_oder_detail_id)) as freight_per_items
         from join_tabelas
     )
+    , sales_key as (
+        select 
+            cast((sales_oder_detail_id || '-' || id_product) as string) as pk_sales
+            , *
+        from transformation
+    )
+
 select * 
-from transformation
+from sales_key

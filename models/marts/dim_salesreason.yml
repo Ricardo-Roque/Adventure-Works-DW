@@ -1,0 +1,9 @@
+version: 2
+models:
+  - name: int_sales_reason
+    description: Int de vendas da Adventure Works.
+    columns:
+      - name: sales_reason_id	
+        description: Chave primária da int de razões.
+        tests:
+          - not_null

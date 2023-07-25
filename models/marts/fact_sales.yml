@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: fact_sales
+    description: Tabela fato de vendas.
+    columns:
+      - name: sales_sk	
+        description: Chave primária da tabela fato.
+        tests:
+          - unique
+          - not_null

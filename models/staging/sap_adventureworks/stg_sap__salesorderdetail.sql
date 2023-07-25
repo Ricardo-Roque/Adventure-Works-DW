@@ -2,7 +2,7 @@ with
     fonte_sales_order_detail as (
         select 
             cast(salesorderid as int) as sales_order_id						
-            , cast(salesorderdetailid as int) as sales_oder_detail_id	
+            , cast(salesorderdetailid as int) as sales_order_detail_id	
             , cast(productid as int) as id_product	
             , cast(unitprice as numeric) as unit_price	
             , cast(orderqty as int) as order_qty		

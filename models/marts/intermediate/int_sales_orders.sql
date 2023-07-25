@@ -10,7 +10,7 @@ with
     , join_sales_order as (
         select  
             sales_order_detail.sales_order_id						
-            , sales_order_detail.sales_oder_detail_id	
+            , sales_order_detail.sales_order_detail_id	
             , sales_order_detail.id_product	
             , sales_order_header.customer_id									
             , sales_order_header.ship_to_address_id						
@@ -42,6 +42,14 @@ with
         from sales_order_detail
         left join sales_order_header on sales_order_detail.sales_order_id = sales_order_header.sales_order_id
     )
+    , transformation as (
+        select 
+            * 
+            , (unit_price * order_qty) as gross_total
+            , (unit_price * order_qty) * (1 - unit_price_discount) as net_total
+            , freight / (count(*) over(partition by sales_order_detail_id)) as freight_per_items
+        from join_sales_order
+    )
     
 select *
-from join_sales_order
+from transformation

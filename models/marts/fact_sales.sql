@@ -22,7 +22,7 @@ with
     , join_tabelas as (
         select 
             sales.sales_order_id						
-            , sales.sales_oder_detail_id	
+            , sales.sales_order_detail_id	
             , sales.id_product	
             , sales.customer_id									
             , sales.ship_to_address_id						
@@ -37,7 +37,10 @@ with
             , sales.sub_total						
             , sales.tax_amt						
             , sales.freight						
-            , sales.total_due   
+            , sales.total_due 
+            , sales.gross_total
+            , sales.net_total
+            , sales.freight_per_items
             , address.state_province_id						
             , address.addres_line_1 					
             , address.address_line_2
@@ -56,20 +59,13 @@ with
         left join product on sales.id_product = product.id_product
         left join sales_reason on sales.sales_order_id = sales_reason.sales_order_id
     )
-    , transformation as (
-        select 
-            * 
-            , (unit_price * order_qty) as gross_total
-            , (unit_price * order_qty) * (1 - unit_price_discount) as net_total
-            , freight / (count(*) over(partition by sales_oder_detail_id)) as freight_per_items
-        from join_tabelas
-    )
+    
     , sales_key as (
         select 
-            cast((sales_oder_detail_id || '-' || id_product) as string) as pk_sales
+            row_number() over (order by sales_order_id,sales_order_detail_id) as sales_sk
             , *
-        from transformation
+        from join_tabelas
     )
 
-select * 
+select *
 from sales_key

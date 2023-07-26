@@ -51,13 +51,10 @@ with
             , product.product_name
             , product.name_product_category
             , product.name_product_subcategory
-            , sales_reason.sales_reason						
-            , sales_reason.reason_type
         from sales
         left join address on sales.ship_to_address_id = address.id_address
         left join credit_card on sales.credit_card_id = credit_card.credit_card_id
         left join product on sales.id_product = product.id_product
-        left join sales_reason on sales.sales_order_id = sales_reason.sales_order_id
     )
     
     , sales_key as (

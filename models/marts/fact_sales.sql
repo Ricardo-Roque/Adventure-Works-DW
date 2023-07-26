@@ -15,10 +15,6 @@ with
         select *
         from {{ ref('dim_product') }}
     )
-    , sales_reason as (
-        select *
-        from {{ ref('dim_salesreason') }}
-    )
     , join_tabelas as (
         select 
             sales.sales_order_id						

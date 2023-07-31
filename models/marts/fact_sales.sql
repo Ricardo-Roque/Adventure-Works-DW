@@ -15,6 +15,10 @@ with
         select *
         from {{ ref('dim_product') }}
     )
+    , customer as (
+        select *
+        from {{ ref('dim_customer') }}
+    )
     , join_tabelas as (
         select 
             sales.sales_order_id						
@@ -47,10 +51,12 @@ with
             , product.product_name
             , product.name_product_category
             , product.name_product_subcategory
+            , cast((customer.first_name || ' ' || customer.last_name) as string) as complete_name
         from sales
         left join address on sales.ship_to_address_id = address.id_address
         left join credit_card on sales.credit_card_id = credit_card.credit_card_id
         left join product on sales.id_product = product.id_product
+        left join customer on sales.customer_id = customer.id_business 
     )
     
     , sales_key as (

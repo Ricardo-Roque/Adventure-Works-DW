@@ -25,6 +25,8 @@ sources:
             tests:
               - unique 
               - not_null
+      - name: customer
+        description: Lista de id person
       - name: personcreditcard
         description: Lista de cartão de credito dos clientes.
       - name: creditcard

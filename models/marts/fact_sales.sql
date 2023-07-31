@@ -56,7 +56,7 @@ with
         left join address on sales.ship_to_address_id = address.id_address
         left join credit_card on sales.credit_card_id = credit_card.credit_card_id
         left join product on sales.id_product = product.id_product
-        left join customer on sales.customer_id = customer.id_business 
+        left join customer on sales.customer_id = customer.customer_id 
     )
     
     , sales_key as (

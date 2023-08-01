@@ -3,9 +3,9 @@ with
         select 
             cast(salesorderid as int) as sales_order_id						
             , cast(revisionnumber as int) as revision_number						
-            , cast(orderdate as string) as order_date						
-            , cast(duedate as string) as due_date						
-            , cast(shipdate as string) as ship_date						
+            , cast(orderdate as datetime) as order_date						
+            , cast(duedate as datetime) as due_date						
+            , cast(shipdate as datetime) as ship_date						
             , cast(status as int) as status 						
             , cast(purchaseordernumber as string) as purchase_order_number						
             , cast(accountnumber as string) as account_number 						
